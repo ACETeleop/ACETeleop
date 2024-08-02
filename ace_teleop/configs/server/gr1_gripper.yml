@@ -1,0 +1,51 @@
+robot_cfg:
+  name: gr1_jaw
+
+  is_ACE: True
+
+  mode: normal
+
+  pos_scale: 1
+  roll_scale: 2.0
+  pitch_scale: 2.0
+  yaw_scale: 2.0
+
+  roll_limit: [-3, 3]
+  pitch_limit: [-3, 3]
+  yaw_limit: [-3, 3]
+
+  roll_offset: 20
+
+  left_wrist:
+    left_wrist_init_rot: [[ 0,  0, -1], [ 1,  0,  0], [ 0,  -1,  0]] 
+    left_wrist_init_pos: [-0.2, 0.2, 0.0]
+    left_center: [-0.2, 0.15, 0.2]
+    left_radius: 0.23
+
+  right_wrist:
+    right_wrist_init_rot: [[ 0,  0,  -1], [ -1,  0,  0], [ 0,  1,  0]]
+    right_wrist_init_pos: [0.2, 0.2, 0.0]
+    right_center: [0.2, 0.15, 0.2]
+    right_radius: 0.23
+
+  left_agent:
+    dynamixel_cfg:
+      port: /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8J0QI3-if00-port0
+      urdf: left_arm/robot.urdf
+      ee_link_name: ee_c
+    hand_cfg:
+      cam_num: 0
+      hand_type: Left
+
+  right_agent:
+    dynamixel_cfg:
+      port: /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8ISG7I-if00-port0
+      urdf: right_arm/robot.urdf
+      ee_link_name: ee_c
+    hand_cfg:
+      cam_num: 2
+      hand_type: Right
+
+
+
+

@@ -1,0 +1,36 @@
+robot_cfg:
+  name: gr1_jaw
+  urdf_path: gr1_jaw/urdf/GR1T1.urdf
+
+  dof_num: 34
+
+  left_arm_indices: [6, 7, 8, 9, 10, 11, 12]
+  right_arm_indices: [14, 15, 16, 17, 18, 19, 20]
+
+  left_arm_init: [-0.2, 0.26, -0.78, -0.79, -1.1, 0.76, 0.52]
+  right_arm_init: [-0.2, -0.26, 0.78, -0.79, 1.1, -0.76, 0.52]
+
+  ee_type: "gripper"
+  gripper_type: "1dof"
+  left_ee: l_ace
+  right_ee: r_ace
+
+  left_ee_indices: [13]
+  right_ee_indices: [21]
+
+  human_hand_indices: [4, 9]
+  hand_low_pass_alpha: 0.8
+  wrist_low_pass_alpha: 0.5
+
+  arm:
+    dt:  1e-1
+    eps: 1e-4
+    damp: 1e-12
+    out_lp_alpha: 0.5
+
+  ee:
+    left_ee:
+      gripper_range: [0.0, 1.6]
+
+    right_ee:
+      gripper_range: [0.0, -1.6]

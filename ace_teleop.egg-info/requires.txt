@@ -1,0 +1,7 @@
+numpy
+pin
+nlopt
+dex_retargeting==0.1.1
+pytransform3d
+opencv-python
+mediapipe

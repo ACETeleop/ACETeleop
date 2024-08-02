@@ -1,0 +1,62 @@
+robot_cfg:
+  name: xarm7_ability
+  urdf_path: xarm7_ability/xarm7_ability.urdf
+
+  dof_num: 34
+
+  left_arm_indices: [0, 1, 2, 3, 4, 5, 6]
+  right_arm_indices: [17, 18, 19, 20, 21, 22, 23]
+  
+  left_arm_init: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  right_arm_init: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+  ee_type: hand
+  left_ee: l_ace
+  right_ee: r_ace
+
+  left_ee_indices: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  right_ee_indices: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+  hand_indices: [2, 3, 4, 5, 8, 9, 6, 7, 0, 1]
+
+  # for human input data
+  human_hand_indices: [4, 9, 14, 19, 24]
+  hand_low_pass_alpha: 0.8
+  wrist_low_pass_alpha: 0.5
+
+  arm:
+    dt:  1e-1
+    eps: 1e-4
+    damp: 1e-12
+    out_lp_alpha: 0.5
+
+  ee:
+
+    left_ee:
+
+      type: vector
+      urdf_path: ability_hand/ability_hand_left.urdf
+      wrist_link_name: "base_link"
+
+      target_joint_names: null
+      target_origin_link_names: [ "base_link", "base_link", "base_link", "base_link", "base_link" ]
+      target_task_link_names: [ "thumb_tip",  "index_tip", "middle_tip", "ring_tip", "pinky_tip", ]
+      scaling_factor: 1.1
+
+      target_link_human_indices: [ [ 0, 0, 0, 0, 0 ], [ 4, 9, 14, 19, 24 ] ]
+
+      low_pass_alpha: 0.5
+
+    right_ee:
+
+      type: vector
+      urdf_path: ability_hand/ability_hand_right.urdf
+      wrist_link_name: "base_link"
+
+      target_joint_names: null
+      target_origin_link_names: [ "base_link", "base_link", "base_link", "base_link", "base_link" ]
+      target_task_link_names: [ "thumb_tip",  "index_tip", "middle_tip", "ring_tip", "pinky_tip", ]
+      scaling_factor: 1.1
+
+      target_link_human_indices: [ [ 0, 0, 0, 0, 0 ], [ 4, 9, 14, 19, 24 ] ]
+
+      low_pass_alpha: 0.5

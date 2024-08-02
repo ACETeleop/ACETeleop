@@ -1,0 +1,76 @@
+<robot name="right_jaw">
+    <link name="base"/>
+    <link name="r_hand_pitch">
+    <inertial>
+      <origin xyz="0.00051791 0.010469 -0.05342" rpy="0 0 0" />
+      <mass value="0.21868931" />
+      <inertia ixx="0.00026882" ixy="1.18E-06" ixz="1.02E-06" iyy="0.00026672" iyz="6.022E-05" izz="0.00011488" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/RArm7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+  </link>
+    <link name="r_link_jaw">
+    <inertial>
+      <origin xyz="-0.00012784 -0.0046548 -0.034339" rpy="0 0 0" />
+      <mass value="0.06974038" />
+      <inertia ixx="5.584E-05" ixy="4E-08" ixz="3E-07" iyy="7.904E-05" iyz="3.45E-06" izz="3.266E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/RArm8.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.036" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_joint_jaw" type="revolute">
+    <origin xyz="0 0 -0.061" rpy="0 0 0" />
+    <parent link="r_hand_pitch" />
+    <child link="r_link_jaw" />
+    <axis xyz="1 0 1.221E-05" />
+    <limit lower="-1" upper="0" effort="3.95" velocity="27.96" />
+  </joint>
+
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+        <parent link="base"/>
+        <child link="r_hand_pitch"/>
+    </joint>
+
+    <link name="r_jaw_tip0"/>
+  <joint name="r_jaw_tip0_joint" type="fixed">
+    <origin
+      xyz="0 0.03 -0.15"
+      rpy="0 0 0" />
+    <parent
+      link="r_hand_pitch"/>
+    <child
+      link="r_jaw_tip0"/>
+  </joint>
+
+    <link name="r_jaw_tip1"/>
+    <joint name="r_jaw_tip1_joint" type="fixed">
+    <origin
+      xyz="0 0.02 -0.09"
+      rpy="0 0 0" />
+    <parent
+      link="r_link_jaw"/>
+    <child
+      link="r_jaw_tip1"/>
+  </joint>
+</robot>

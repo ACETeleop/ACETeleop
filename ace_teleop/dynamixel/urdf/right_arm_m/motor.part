@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "bc63fab31a4f7173799ffd8e",
+    "documentMicroversion": "c57758ccd42d2f9fb962378c",
+    "documentVersion": "6386c75aaa23e03963d60848",
+    "elementId": "2db9376dc87b7536ab827624",
+    "fullConfiguration": "default",
+    "id": "MMAmF+YlVXfjsY+5c",
+    "isStandardContent": false,
+    "name": "motor <1>",
+    "partId": "JFH",
+    "suppressed": false,
+    "type": "Part"
+}
