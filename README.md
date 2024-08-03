@@ -54,7 +54,7 @@ for Low-Cost Dexterous Teleoperation </h1>
 
 ## Introduction
 
-The repository contains all the software for **ACE**, which includes three main components: server, controller, and simulation. Additionally, we provide utilities to set up the hardware. Combined with ACE hardware, you can quickly teleoperate various end-effectors and robots in the simulation environment or use commands from the controller to operate robots in the real world.
+The repository contains all the software for **ACE**, which includes three main components: server, controller, and simulation. Additionally, we provide utilities to set up the hardware. Combined with ACE hardware, you can quickly teleoperate with various end-effectors and robots in the simulation environment or use commands from the controller to operate robots in the real world.
 
 ### Key Components
 - **Server:** Accepts hand images and joint angles as inputs, and outputs the wrist pose and hand key points after mapping.
@@ -67,7 +67,7 @@ The repository contains all the software for **ACE**, which includes three main 
 - **H1** with **Inspire Hand**
 - **GR-1** with **Gripper**
 
-We will continue to update and expand the list of supported robots and end-effectors.
+Welcome to update and expand the list of supported robots and end-effectors!
 
 ## Prepare:
 ```python
@@ -89,7 +89,7 @@ The system is easy to use with only three steps to control various end-effectors
 
 **Note:** 
 1. The teleoperation system will automatically map rotation and position, then start after [initialization](#initialization). The initialization process begins when the hands are held still with fingers spread out flat.
-2. Server and controller need corresponding config.
+2. Server and controller need corresponding configs.
 
 <p id="ace-server"></p>
 
@@ -100,7 +100,7 @@ If you just want to see how the code works, you can have fun with your keyboard:
 ```python
 python3 scripts/start_server.py --config h1_inspire --keyboard
 ```
-You can use 'wasd' to control the left wrist and '↑←↓→' to control the right wrist after running the teleop_sim code. Note: the control signal is sent from the server side, therefore the foreground window must be the terminal running the above script.
+You can use `wasd` to control the left wrist and `↑←↓→` to control the right wrist after running the `teleop_sim` code (see below). Note: the control signal is sent from the server side, therefore the foreground window must be the terminal running the above script.
 
 If you have a set of ACE teleoperation hardware, try:
 ```python
@@ -113,7 +113,7 @@ python3 scripts/start_server.py --config h1_inspire_mirror
 ```
 <p id="ace-controller"></p>
 
-## ACE Controller (Get Input from Server)
+## ACE Controller (Get Input from the server)
 
 ### Run Controller
 ```python
@@ -123,7 +123,7 @@ python scripts/teleop_cmd.py --config h1_inspire
 
 <p id="simulation"></p>
 
-## Simulation (Get input from controller)
+## Simulation (Get input from the controller)
 
 ### Running in Simulation
 
@@ -154,7 +154,7 @@ By default, each motor has the ID 1. In order for multiple dynamixels to be cont
 
 After setting the motor IDs, you can connect to the ACE hardware. However, each motor has its own joint offset, leading to discrepancies between your ACE hardware and the ACE URDF. Dynamixels have a symmetric 4-hole pattern, resulting in joint offsets that are multiples of π/2. To address this, you can use the following code to calibrate your ACE hardware. 
 
-- **Port:** Find the port ID of your U2D2 Dynamixel device by running `ls /dev/serial/by-id` and looking for the path that starts with `usb-FTDI_USB__-__Serial_Converter` (on Ubuntu). On Mac, look in /dev/ for the device that starts with `cu.usbserial`.
+- **Port:** Find the port ID of your U2D2 Dynamixel device by running `ls /dev/serial/by-id` and looking for the path that starts with `usb-FTDI_USB__-__Serial_Converter` (on Ubuntu). On Mac, look in /dev/ for the device that begins with `cu.usbserial`.
 
 - **Type:** Specify which arm you are calibrating.
 
@@ -167,7 +167,7 @@ python3 -m ace_teleop.hardware.calibration.get_offset --port /dev/serial/by-id/u
 <img src="./src/calibration.png" width="80%"/>
 </p>
 
-After getting the offset, go to `ace_teleop/dynamixel/config.py` and add a `DynamixelRobotConfig` to the `PORT_CONFIG_MAP`. Note: You only need to copy an existing config from the file and modify the `port` and `joint_offsets` as needed.
+After getting the offset, go to `ace_teleop/dynamixel/config.py` and add a `DynamixelRobotConfig` to the `PORT_CONFIG_MAP`. Note: You only need to copy an existing config from the file and modify the `port` and `joint_offsets` as required.
 
 ### Test Calibration
 
@@ -203,9 +203,9 @@ With default configurations and auto mapping, you can easily control the provide
 
 ### Mapping Controls
 
-- **r:** Remap current human rotation to the set robot rotation.
-- **p:** Remap current human position to the set robot position.
-- **m:** First press: robot will keep still. Second press: remap current human pose to current robot pose.
+- **r:** Remap the current human rotation to the set robot rotation.
+- **p:** Remap the current human position to the set robot position.
+- **m:** First press: the robot will keep still. Second press: remap the current human pose to the current robot pose.
 - **x:** First press: lock x-axis movement. Second press: unlock x-axis movement.
 - **y:** First press: lock y-axis movement. Second press: unlock y-axis movement.
 - **z:** First press: lock z-axis movement. Second press: unlock z-axis movement.
