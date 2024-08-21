@@ -160,7 +160,7 @@ After setting the motor IDs, you can connect to the ACE hardware. However, each 
 
 ```python
 # Set the ACE hardware to the pose shown in the following picture, then run the code
-python3 -m ace_teleop.hardware.calibration.get_offset --port /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8J0QI3-if00-port0 --type left
+python3 -m ace_teleop.dynamixel.calibration.get_offset --port /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8J0QI3-if00-port0 --type left
 ```
 
 <p align="center">
@@ -174,7 +174,7 @@ After getting the offset, go to `ace_teleop/dynamixel/config.py` and add a `Dyna
 After calibration, you can test the result with the following command. You should see the ACE hardware in the real world behave the same way as it does in the simulation.
 
 ```python
-python -m ace_teleop.hardware.calibration.test_calibration --port /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8J0QI3-if00-port0 --type left
+python -m ace_teleop.dynamixel.calibration.test_calibration --port /dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT8J0QI3-if00-port0 --type left
 ```
 
 ### Find Cam index and test the Cam FPS

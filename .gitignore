@@ -4,4 +4,6 @@
 **/*.avi
 **/*.mp4
 **/*.zip
+*.egg-info
 .idea/
+

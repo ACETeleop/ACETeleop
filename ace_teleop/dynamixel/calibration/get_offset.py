@@ -3,7 +3,7 @@ import numpy as np
 
 from typing import Tuple
 from dataclasses import dataclass, field
-from ace_teleop.hardware.dynamixel.driver import DynamixelDriver
+from ace_teleop.dynamixel.driver import DynamixelDriver
 
 
 @dataclass
