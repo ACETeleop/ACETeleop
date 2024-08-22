@@ -2,7 +2,7 @@
 for Low-Cost Dexterous Teleoperation </h1>
 
 <p align="center">
-    <a href="https://shiqiyang.github.io" style="font-size: 20px;">
+    <a href="https://aaronyang1223.github.io/" style="font-size: 20px;">
         Shiqi Yang
     </a>
     ·
@@ -44,7 +44,7 @@ for Low-Cost Dexterous Teleoperation </h1>
 </p>
 
 <p align="center">
-<h3 align="center"><a href="https://ace-teleop.github.io/">Website</a> | <a href="https://ace-teleop.github.io/">arXiv</a> | <a href="https://docs.google.com/document/d/1sStEXkSqi03mnFAGhRTtuU14KrGu1ZqmN78boORJfaI/edit?usp=sharing">Hardware</a> </h3>
+<h3 align="center"><a href="https://ace-teleop.github.io/">Website</a> | <a href="http://arxiv.org/abs/2408.11805">arXiv</a> | <a href="https://github.com/ACETeleop/ACE_hardware">Hardware</a> </h3>
   <div align="center"></div>
 </p>
 
@@ -54,7 +54,7 @@ for Low-Cost Dexterous Teleoperation </h1>
 
 ## Introduction
 
-The repository contains all the software for **ACE**, which includes three main components: server, controller, and simulation. Additionally, we provide utilities to set up the hardware. Combined with ACE hardware, you can quickly teleoperate with various end-effectors and robots in the simulation environment or use commands from the controller to operate robots in the real world.
+The repository contains all the software for **ACE**, which includes three main components: server, controller, and simulation. Additionally, we provide utilities to set up the hardware. Combined with ACE hardware, you can quickly teleoperate with various end-effectors and robots in the simulation environment or use commands from the controller to operate robots in the real world. See the ACE hardware repository for the STL files and hardware instructions for building your own <a href="https://github.com/ACETeleop/ACE_hardware">**ACE**</a>.
 
 ### Key Components
 - **Server:** Accepts hand images and joint angles as inputs, and outputs the wrist pose and hand key points after mapping.
