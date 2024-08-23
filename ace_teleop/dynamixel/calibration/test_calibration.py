@@ -356,7 +356,7 @@ def visualize_urdf(
         "left": "left_arm/robot.urdf",
         "left_m": "left_arm_m/robot.urdf",
     }
-    urdf_path = (
+    urdf_path = str(
         Path(__file__).resolve().parent.parent / "urdf" / Path(urdf_paths[agent_type])
     )
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)

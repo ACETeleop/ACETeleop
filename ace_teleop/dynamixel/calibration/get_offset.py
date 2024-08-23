@@ -25,10 +25,10 @@ class Args:
 
     def __post_init__(self):
         if self.type == "right":
-            self.start_joints = (1.571, 1.571, 0, 0, 0, 0)
+            self.start_joints = (0, 1.571, 0, 0, 0, 0)
             self.joint_signs = (-1, -1, -1, -1, -1, -1)
         else:  # default to left agent
-            self.start_joints = (-1.571, -1.571, 0, 0, 0, 0)
+            self.start_joints = (0, -1.571, 0, 0, 0, 0)
             self.joint_signs = (-1, -1, -1, -1, -1, -1)
 
         assert len(self.joint_signs) == len(self.start_joints)

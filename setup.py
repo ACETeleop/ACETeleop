@@ -25,6 +25,6 @@ setup(
         "mediapipe",
         "pyquaternion",
         "dynamixel_sdk",
-        "sapien==3.0.0b0",
+        "tyro",
     ],
 )
