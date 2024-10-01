@@ -43,6 +43,8 @@ for Low-Cost Dexterous Teleoperation </h1>
     <img src="./src/UCSanDiegoLogo-BlueGold.png" height="50">
 </p>
 
+<h3 align="center"> CoRL 2024 </h3>
+
 <p align="center">
 <h3 align="center"><a href="https://ace-teleop.github.io/">Website</a> | <a href="http://arxiv.org/abs/2408.11805">arXiv</a> | <a href="https://github.com/ACETeleop/ACE_hardware">Hardware</a> </h3>
   <div align="center"></div>
